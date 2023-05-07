@@ -4,12 +4,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './include/navbar/navbar.component';
 import { FooterComponent } from './include/footer/footer.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule
