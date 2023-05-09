@@ -3,17 +3,20 @@
         <div class="col-md-6">
 
             <div class="card shadow-lg p-5 my-5" >
-                <h1>Wellcome</h1>
-                <form action="">
-                    <div class="form-group">
+                <h2 class="text-center">Wellcome Here!</h2><hr>
+                <div class="alert alert-success" role="alert">
+                    Account Has Been Created! <a routerLink="/login" class="text-primary" style="cursor: pointer;">Login here</a>
+                </div>
+                <form [formGroup]="signupForm" class="text-left">
+                    <div class="form-group" >
                         <label for="">Display Name</label>
-                        <input type="text" class="form-control" placeholder="Username">
+                        <input type="text" class="form-control" placeholder="Username" formControlName="displayName">
                         <label for="">Email</label>
-                        <input type="email" class="form-control" placeholder="Enter Email Id ">
+                        <input type="email" class="form-control" placeholder="Enter Email Id "  formControlName="email">
                         <label for="">Password</label>
-                        <input type="password" class="form-control" placeholder="*******">
+                        <input type="password" class="form-control" placeholder="*******"  formControlName="password">
                     </div><br/>
-                    <button type="button" class="btn btn-outline-info">SignUp</button>
+                    <button  class="btn btn-outline-info  w-100" (click)="signup()">Create Account</button>
                 </form>
             </div>
         </div>
