@@ -1,1 +1,22 @@
-<p>login works!</p>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="card shadow-lg p-5 my-5" >
+                <h2 class="text-center">Wellcome Back ♥</h2><hr>
+                <div class="alert alert-success" role="alert">
+                    Login Successfull! 
+                </div>
+                <form [formGroup]="loginForm" class="text-left">
+                    <div class="form-group" >
+                        <label for="">Email</label>
+                        <input type="email" class="form-control" placeholder="Enter Email Id "  formControlName="email">
+                        <label for="">Password</label>
+                        <input type="password" class="form-control" placeholder="*******"  formControlName="password">
+                    </div><br/>
+                    <button  class="btn btn-outline-info  w-100" (click)="login()">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
