@@ -4,8 +4,8 @@
 
             <div class="card shadow-lg p-5 my-5" >
                 <h2 class="text-center">Wellcome Here!</h2><hr>
-                <div class="alert alert-success" role="alert">
-                    Account Has Been Created! <a routerLink="/login" class="text-primary" style="cursor: pointer;">Login here</a>
+                <div [ngClass]="className" role="alert">
+                    {{message}} <a routerLink="/login" class="text-primary" style="cursor: pointer;">Login here</a>
                 </div>
                 <form [formGroup]="signupForm" class="text-left">
                     <div class="form-group" >
