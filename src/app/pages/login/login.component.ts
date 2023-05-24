@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ export class LoginComponent implements OnInit {
 
   loginForm!: FormGroup;
   
-  constructor(private fb:FormBuilder) {
+  constructor(private fb:FormBuilder, private auth:AuthService) {
     this.loginForm = this.fb.group({
       'email' : ['', Validators.required],
       'password' : ['', Validators.required],
@@ -21,7 +22,19 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    alert('Login ok');
+    const data = this.loginForm.value;
+    this.auth.login(data).subscribe(result=>{
+      if(result.success){
+        alert("If:,"+result.success);
+
+      }else{
+        alert("Else:,"+result.success);
+
+      }
+    },err=>{
+      alert("Login Failed!");
+    });
+
   }
 
 
