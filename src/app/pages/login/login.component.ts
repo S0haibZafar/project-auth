@@ -25,11 +25,10 @@ export class LoginComponent implements OnInit {
     const data = this.loginForm.value;
     this.auth.login(data).subscribe(result=>{
       if(result.success){
-        alert("If:,"+result.success);
-
+        alert(result.message);
+        localStorage.setItem("token", result.token);
       }else{
-        alert("Else:,"+result.success);
-
+        alert(result.message);
       }
     },err=>{
       alert("Login Failed!");
