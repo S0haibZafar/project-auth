@@ -16,11 +16,11 @@ const routes: Routes = [
     component: RegisterComponent
   },
   {
-    path :'profile',
+    path :'**',
     component: ProfileComponent
   },
   {
-    path :'**',
+    path :'dashboard',
     component: DashboardComponent
   },
   
