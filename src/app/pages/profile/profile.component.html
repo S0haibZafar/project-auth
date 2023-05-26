@@ -1,1 +1,13 @@
-<p>profile works!</p>
+<div class="container pt-5">
+    <div class="row pt-5 justify-content-center">
+        <div class="col-md-6">
+            <div class="card ">
+                <div class="card-body">
+                    <h3>Name: {{data? data.name: ''}}</h3>
+                    <p>Email: {{data? data.email: ''}} </p>
+                    <button class="btn btn-danger">Logout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
