@@ -5,7 +5,7 @@
                 <div class="card-body">
                     <h3>Name: {{data? data.name: ''}}</h3>
                     <p>Email: {{data? data.email: ''}} </p>
-                    <button class="btn btn-danger">Logout</button>
+                    <button class="btn btn-danger" (click)="logout()" >Logout</button>
                 </div>
             </div>
         </div>

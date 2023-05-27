@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {  Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class ProfileComponent implements OnInit {
 
   data!:any;
 
-  constructor(private auth : AuthService) { }
+  constructor(private auth : AuthService,private router : Router) { }
 
   ngOnInit(): void {
     this.getProfile();
@@ -20,8 +21,15 @@ export class ProfileComponent implements OnInit {
     this.auth.getProfile().subscribe((res)=>{
       if(res.success){
         this.data = res.data;
+      }else{
+        this.logout();
       }
     });
+  }
+
+  logout(){
+    localStorage.clear();
+    this.router.navigate(['/login']);
   }
 
 }
